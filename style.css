@@ -16,3 +16,12 @@ footer a {
   text-decoration: none;
   color: #303030;
 }
+
+#troll {
+  border: none;
+  background-color: aqua;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+}
