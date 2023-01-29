@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- Create a button (can be anything really) here, give it an ID so that you JS code can select it -->
-    <button id="troll">
+    <button id='troll'>
       Click Me
     </button>
 
@@ -23,5 +23,33 @@
   </body>
   <script>
     // You may start writing your JS code here
+    function randomHeight() {
+      return Math.floor(Math.random() * (window.innerHeight + 1) + 0)
+    }
+
+    function randomWidth() {
+      return Math.floor(Math.random() * (window.innerWidth + 1) + 0)
+    }
+
+    var clickMe = document.getElementById('troll')
+    
+    let i = 0
+    clickMe.addEventListener('mouseover', function run() {
+      if (i<10) {
+        clickMe.style.top = randomHeight() + 'px'
+        clickMe.style.left = randomWidth() + 'px'
+        clickMe.style.backgroundColor = '#' + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, '0')
+        console.log(window.innerHeight, window.innerWidth)
+      } else {
+        clickMe.addEventListener('click', function final() {
+          const img = document.createElement('img')
+          img.setAttribute('src', 'https://mymodernmet.com/wp/wp-content/uploads/archive/SuJWHboczNeMaX9Sch2M_rcHughJorgens.jpg')
+          clickMe.replaceWith(img)
+        })
+      }
+
+      i++
+    })
+    
   </script>
 </html>
